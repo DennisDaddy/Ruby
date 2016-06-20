@@ -20,11 +20,12 @@ guessed_it =false
 
 until num_guesses ==10 || guessed_it
 
-puts "You've got #{10 - num_guesss} guesses left."
+puts "You've got #{10 - num_guesses} guesses left."
 print "Make a guess:"
 guess = gets.to_i
 
-num_guesss += 1
+num_guesses += 1
+
 #Compare the guess to the target. 
 #Print the appropriate message 
 if guess < target
@@ -33,11 +34,12 @@ elsif guess>target
   puts "Oops. Your guess was HIGH."
 elsif guess == target
   puts "Good job, #{name}!"
-  puts "You guessed my number in #{num_guesss} guesses!"
+  puts "You guessed my number in #{num_guesses} guesses!"
   guessed_it = true
 end 
 end
-#if the player did'nt guess in time ,show the target number.unless guesesd_it
+#if the player did'nt guess in time ,show the target number.
+unless guessed_it
 puts "Sorry. You didn't get my number. (It was #{target}. )"
 end
 
